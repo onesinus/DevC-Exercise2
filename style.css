@@ -2,6 +2,8 @@
 	height: 10vh;
 	width: 24vw;
 	margin-left: -1%;
+	border-radius: 0;
+	border: 1px solid white;
 }
 
 .calculator{
