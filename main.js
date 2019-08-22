@@ -28,15 +28,17 @@ function addByKeyboard(e){
 	}else if(x == 48){
 		addNumberToBox(0);
 	}else if(x == 42){
-		addNumberToBox(" * ");
+		addMultiply();
 	}else if(x == 58 || x == 47){
-		addNumberToBox(" / ");
+		divideBtn();
 	}else if(x == 43){
-		addNumberToBox(" + ");
+		addPlus();
 	}else if(x == 45){
-		addNumberToBox(" - ");
+		addMinus();
 	}else if(x == 94){
 		addNumberToBox(" ^ ");
+	}else if(x == 44){
+		addComma();
 	}else if(x == 13){
 		hitungHasil()
 	}
@@ -54,5 +56,33 @@ function backspaceBtn(){
 }
 
 function hitungHasil(){
-	hasil.textContent = eval(hasil.textContent);
+	try{
+		hasil.textContent = eval(hasil.textContent);
+	}catch(e){
+		alert(e);
+	}
+}
+
+function bersihkan(){
+	hasil.textContent = 0;
+}
+
+function addComma(){
+	addNumberToBox(".");
+}
+
+function divideBtn(){
+	addNumberToBox(" / ");
+}
+
+function addPlus(){
+	addNumberToBox(" + ");
+}
+
+function addMultiply(){
+	addNumberToBox(" * ");
+}
+
+function addMinus(){
+	addNumberToBox(" - ");
 }
